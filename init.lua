@@ -35,6 +35,7 @@ minetest.register_on_prejoinplayer(function(name, ip)
 	if name == "singleplayer" or name == admin or whitelist[name] then
 		return
 	end
+  minetest.chat_send_all("Player of name: "..name.." tried to connect from "..ip.." and was refused.")
 	return "This server is whitelisted and you are not on the whitelist."
 end)
 
