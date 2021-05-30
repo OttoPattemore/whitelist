@@ -61,7 +61,14 @@ minetest.register_chatcommand("whitelist", {
 			save_whitelist()
 			return true, "Removed "..whitename.." from the whitelist."
 		else
-			return false, "Invalid action."
+      building = "Whitelist contains: \n"
+      for k, v in pairs(whitelist) do
+        if v == true then
+            building = building .. k .. "\n"
+        end
+      end
+      
+			return true, building
 		end
 	end,
 })
