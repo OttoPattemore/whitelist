@@ -7,6 +7,9 @@
 This is a simple Minetest mod that adds a player whitelist. Any player names not found in the whitelist are denied access to the server.
 
 - Commands:
+
+  - ***/whitelist***
+    - Lists all players on the whitelist
   - ***/whitelist add <name>***
     - Adds a username to whitelist & allows access to server.
   - ***/whitelist remove <name>***
