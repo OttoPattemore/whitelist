@@ -35,7 +35,7 @@ minetest.register_on_prejoinplayer(function(name, ip)
 	if name == "singleplayer" or name == admin or whitelist[name] then
 		return
 	end
-  minetest.chat_send_all("Player of name: "..name.." tried to connect from "..ip.." and was refused.")
+  	minetest.chat_send_all("Player of name: "..name.." tried to connect from "..ip.." and was refused.")
 	return "This server is whitelisted and you are not on the whitelist."
 end)
 
@@ -61,14 +61,14 @@ minetest.register_chatcommand("whitelist", {
 			save_whitelist()
 			return true, "Removed "..whitename.." from the whitelist."
 		else
-      building = "Whitelist contains: \n"
-      for k, v in pairs(whitelist) do
-        if v == true then
-            building = building .. k .. "\n"
-        end
-      end
+      		building = "Whitelist contains: \n"
+      		for k, v in pairs(whitelist) do
+        	  if v == true then
+            	    building = building .. k .. "\n"
+        	  end
+      		end
       
-			return true, building
+		return true, building
 		end
 	end,
 })
